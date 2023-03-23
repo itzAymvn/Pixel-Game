@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #1b1b1b;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#board {
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.box:hover:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1b1b1b;
+    opacity: 0.5;
+}
+
+#sidebar {
+    padding: 1em;
+    width: 15%;
+    height: 500px;
+    min-height: 50%;
+    border-radius: 0.5rem;
+    background: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sidebar h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1b1b1b;
+    margin: 1rem 0;
+}
+
+#sidebar .color-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar .colors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+#sidebar .color {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #1b1b1b;
+    box-shadow: inset 0 0 0 1px #1b1b1b;
+    transition: all 0.2s ease-in-out;
+}
+
+#sidebar .color:hover {
+    cursor: pointer;
+}
+
+#sidebar .timer-div {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: #1b1b1b;
+    color: #fff;
+}
+
+#sidebar .timer-div #timer {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    color: #fff;
+}
+
+footer p {
+    font-size: 1.5rem;
+}
