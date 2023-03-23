@@ -26,9 +26,6 @@ if (isset($_SESSION['player'])) {
             <input type="submit" name="login" value="Login">
             <a href="register.php">Register</a>
         </form>
-
-
-
         <?php
         if (isset($_GET['error'])) {
             if ($_GET['error'] == 'user_not_exists') {

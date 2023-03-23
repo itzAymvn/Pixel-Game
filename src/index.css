@@ -17,6 +17,34 @@ body {
     min-height: 100vh;
 }
 
+header {
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: #000;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
 main {
     display: flex;
     gap: 20px;

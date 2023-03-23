@@ -1,4 +1,6 @@
+// Checking if the user is logged in or not
 const isLogged = player.role === "Player" ? true : false;
+
 // Preparing the board
 
 const board = document.querySelector("#board");
@@ -92,7 +94,7 @@ setInterval(getPlacedPixels, 1000);
 // End of the placed pixels logic
 
 // The logic for placing pixels with a limit of 1 pixel every 30 seconds
-// function to update the timer every second
+
 const updateTimer = () => {
     const now = Date.now();
     const timePassed = Math.floor((now - lastPlaced) / 1000);
@@ -100,7 +102,7 @@ const updateTimer = () => {
     if (timeLeft > 0) {
         timer.innerHTML = timeLeft;
     } else {
-        timer.innerHTML = 0;
+        timer.innerHTML = delayInSec;
     }
 };
 isLogged &&
@@ -109,7 +111,9 @@ isLogged &&
             updateTimer();
         }
     }, 1000);
+
 isLogged && updateTimer();
+
 boxes.forEach((box, i) => {
     if (isLogged) {
         box.addEventListener("click", (e) => {
