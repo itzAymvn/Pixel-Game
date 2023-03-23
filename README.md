@@ -27,3 +27,12 @@ CREATE TABLE `pixels` (
   FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
+
+# Todo
+
+-   Use WebSockets to update the board in real time instead of refreshing the page every 1s (Performance)
+-   Add a chart to show the current most used colors
+
+# License
+
+[![License](https://img.shields.io/github/license/itzaymvn/PixelGame?style=for-the-badge)](https://github.com/itzAymvn/PixelGame/blob/master/LICENSE)
