@@ -35,4 +35,4 @@ CREATE TABLE `pixels` (
 
 # License
 
-[![License](https://img.shields.io/github/license/itzaymvn/PixelGame?style=for-the-badge)](https://github.com/itzAymvn/PixelGame/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/itzaymvn/pixelgame?style=for-the-badge)](https://github.com/itzAymvn/PixelGame/blob/master/LICENSE)
