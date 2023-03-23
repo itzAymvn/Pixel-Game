@@ -77,6 +77,39 @@ const getPlacedPixels = () => {
     fetch("./actions/RetrievePixels.php")
         .then((response) => response.json())
         .then((responseJson) => {
+            const numberOfUsedPixels = responseJson.length;
+            let usageTImes = responseJson.reduce((acc, pixel) => {
+                const index = acc.findIndex(
+                    (item) => item.color === pixel.color
+                );
+                if (index === -1) {
+                    acc.push({color: pixel.color, used: 1});
+                } else {
+                    acc[index].used++;
+                }
+                return acc;
+            }, []);
+
+            usageTImes = usageTImes.sort((a, b) => b.used - a.used);
+
+            const chartColors = document.querySelector("#chart-colors");
+            chartColors.innerHTML = "";
+            usageTImes.forEach((item) => {
+                const chartDiv = document.createElement("div");
+                const colorDiv = document.createElement("div");
+                const percentageDiv = document.createElement("div");
+                chartDiv.classList.add("chart");
+                colorDiv.classList.add("color");
+                percentageDiv.classList.add("percentage");
+                colorDiv.style.backgroundColor = item.color;
+                percentageDiv.innerHTML = `${Math.floor(
+                    (item.used / numberOfUsedPixels) * 100
+                )}%`;
+                chartDiv.appendChild(colorDiv);
+                chartDiv.appendChild(percentageDiv);
+                chartColors.appendChild(chartDiv);
+            });
+
             responseJson.forEach((pixel) => {
                 boxes[pixel.pixelIndex].style.backgroundColor = pixel.color;
                 boxes[pixel.pixelIndex].dataset.color = pixel.color;

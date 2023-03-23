@@ -44,20 +44,62 @@
 
     <main>
         <div class="board" id="board"></div>
-        <?php
-        if (isset($_SESSION['player'])) {
-        ?>
-            <div class="sidebar" id="sidebar">
+
+        <div class="sidebar" id="sidebar">
+            <?php
+            if (isset($_SESSION['player'])) {
+            ?>
                 <div class="color-select">
                     <h2>Select a color</h2>
                     <div class="colors" id="colors"></div>
                 </div>
-                <h2 class="timer-div">Timer: <span id="timer"></span></h2>
+            <?php
+            }
+            ?>
+            <div class="chart">
+                <h2>
+                    Colors chart
+                </h2>
+                <div class="chart-colors" id="chart-colors">
+                </div>
             </div>
-        <?php
-        }
-        ?>
+            <?php
+            if (isset($_SESSION['player'])) {
+            ?>
+                <h2 class="timer-div">Timer: <span id="timer"></span></h2>
+            <?php
+            }
+            ?>
+        </div>
+
+        <style>
+            .chart {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .chart-colors {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .chart-colors>div {
+                display: flex;
+                flex-direction: row;
+                gap: 0.25rem;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
     </main>
+
 
     <footer>
         <p>© 2023 Ayman</p>
