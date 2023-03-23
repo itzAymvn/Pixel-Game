@@ -1,6 +1,6 @@
 # Pixel Game
 
-A website for playing pixel game, which is a game that allows you to place 1 pixel on the board each 30 seconds which whatever color you want, other players can also place pixels on the board, and the board will be saved in the database.
+A website for playing pixel game, which is a game that allows you to place 1 pixel on the board each 30 seconds with whatever color you want, other players can also place pixels on the board, and the board will be saved in the database.
 
 # Database Structure
 
@@ -23,7 +23,7 @@ CREATE TABLE `pixels` (
   `player_id` int(11) DEFAULT NULL,
   `color` varchar(50) NOT NULL,
   `pixelIndex` int(11) NOT NULL,
-  `placed_at` bigint(20) NOT NULL
+  `placed_at` bigint(20) NOT NULL,
   FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
